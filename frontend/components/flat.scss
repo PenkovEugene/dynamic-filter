@@ -1,0 +1,101 @@
+.flatContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 371px;
+  border: 0.58px solid #040306;
+  border-radius: 5.78px;
+
+  .flatPriceInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18.48px 23.68px 30px;
+
+    .flatRoomInfo {
+      font-family: "Extatica";
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15.6px;
+      margin-bottom: 4.62px;
+    }
+
+    .priceInfo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 17px;
+      align-items: center;
+
+      .actualPrice {
+        font-family: "Extatica";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23.4px;
+      }
+
+      .oldPrice {
+        font-family: "Extatica";
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15.6px;
+        text-decoration: line-through;
+      }
+    }
+
+    .favoriteBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 31.77px;
+      height: 31.77px;
+      border-radius: 16.21px;
+      border: 0.58px solid #040306
+    } 
+  }
+
+  .flatImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30.8px;
+  }
+
+  .buildingInfo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 24px;
+
+    .progectInfo, .floorInfo, .deadlineInfo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .infoName {
+        font-family: "Evolventa";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15.6px;
+        opacity: 50%;
+      }
+
+      .infoValue {
+        font-family: "Evolventa";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15.6px;
+      }
+    }
+
+    .lineImage {
+      width: 100%;
+      border: 0.58px solid #040306;
+      opacity: 20%;
+      margin: 4.62px 0;
+    }
+  }
+}

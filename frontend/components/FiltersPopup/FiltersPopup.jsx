@@ -1,10 +1,10 @@
 import React from "react";
 
-export function FiltersPopup () {
+export function FiltersPopup ({toggleFiltersPopup}) {
   return (
     <div className="filtersPopupContainer">
       <div className="exitBtnContainer">
-        <button className="exitBtn">
+        <button className="exitBtn" onClick={toggleFiltersPopup}>
           <img src="exit_logo.svg" alt="exit image" />
         </button>
       </div>

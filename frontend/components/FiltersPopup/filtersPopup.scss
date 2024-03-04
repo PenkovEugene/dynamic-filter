@@ -1,6 +1,7 @@
 .filtersPopupContainer {
   display: flex;
   flex-direction: column;
+  
   .exitBtnContainer {
     display: flex;
     justify-content: flex-end;
@@ -91,6 +92,13 @@
       background: #2495FE;
       opacity: 100%;
       margin: 0;
+    }
+
+    .line {
+      width: 20px;
+      border: 1px solid #040306;
+      opacity: 30%;
+      padding: auto;
     }
   }
 }

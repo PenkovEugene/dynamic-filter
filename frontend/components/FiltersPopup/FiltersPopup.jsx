@@ -35,13 +35,15 @@ export function FiltersPopup () {
         </div>
         <h2>Стоимость</h2>
         <button className="pricefilter">
-          <p>Все</p>
-          <p><img src="vector.svg" alt="vector" /></p>
+          <p>от 2 800 000 ₽</p>
+          <p className="line"></p>
+          <p>до 10 730 000 ₽</p>
         </button>
         <h2>Задайте площадь, м<sup>2</sup></h2>
         <button className="squereFilter">
-          <p>Все</p>
-          <p><img src="vector.svg" alt="vector" /></p>
+          <p>от 21,1</p>
+          <p className="line"></p>
+          <p>до 98,4</p>
         </button>
         <button className="flatResultsBtn">
           Смотреть квартиры

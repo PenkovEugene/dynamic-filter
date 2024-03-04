@@ -83,4 +83,10 @@
   background: #2495FE;
   opacity: 100%;
   margin: 0;
+}
+.filtersPopupContainer .filtersContainer .line {
+  width: 20px;
+  border: 1px solid #040306;
+  opacity: 30%;
+  padding: auto;
 }/*# sourceMappingURL=filtersPopup.css.map */

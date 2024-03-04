@@ -15,7 +15,7 @@
   padding: 18.48px 23.68px 30px;
 }
 .flatContainer .flatPriceInfoContainer .flatRoomInfo {
-  font-family: "Extatica";
+  font-family: "Extatica", sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 15.6px;
@@ -29,13 +29,13 @@
   align-items: center;
 }
 .flatContainer .flatPriceInfoContainer .priceInfo .actualPrice {
-  font-family: "Extatica";
+  font-family: "Extatica", sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 23.4px;
 }
 .flatContainer .flatPriceInfoContainer .priceInfo .oldPrice {
-  font-family: "Extatica";
+  font-family: "Extatica", sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 15.6px;
@@ -69,14 +69,14 @@
   justify-content: space-between;
 }
 .flatContainer .buildingInfo .progectInfo .infoName, .flatContainer .buildingInfo .floorInfo .infoName, .flatContainer .buildingInfo .deadlineInfo .infoName {
-  font-family: "Evolventa";
+  font-family: "Evolventa", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 15.6px;
   opacity: 50%;
 }
 .flatContainer .buildingInfo .progectInfo .infoValue, .flatContainer .buildingInfo .floorInfo .infoValue, .flatContainer .buildingInfo .deadlineInfo .infoValue {
-  font-family: "Evolventa";
+  font-family: "Evolventa", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 15.6px;

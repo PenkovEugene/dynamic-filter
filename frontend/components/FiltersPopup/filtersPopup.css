@@ -1,0 +1,86 @@
+.filtersPopupContainer {
+  display: flex;
+  flex-direction: column;
+}
+.filtersPopupContainer .exitBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+.filtersPopupContainer .exitBtnContainer .exitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444444;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  opacity: 60%;
+}
+.filtersPopupContainer h1 {
+  font-family: "Extatica", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 32.5px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.filtersPopupContainer .filtersContainer h2 {
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15.6px;
+  color: #040306;
+  opacity: 40%;
+  margin-bottom: 12px;
+}
+.filtersPopupContainer .filtersContainer button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.filtersPopupContainer .filtersContainer button p {
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.2px;
+}
+.filtersPopupContainer .filtersContainer .roomsBtnsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.filtersPopupContainer .filtersContainer .roomsBtnsContainer [class^=roomsBtns] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 49px;
+  height: 49px;
+}
+.filtersPopupContainer .filtersContainer .squereFilter {
+  margin-bottom: 48px;
+}
+.filtersPopupContainer .filtersContainer .flatResultsBtn {
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16.8px;
+  border-style: none;
+  background: #2495FE;
+  opacity: 100%;
+  margin: 0;
+}/*# sourceMappingURL=filtersPopup.css.map */

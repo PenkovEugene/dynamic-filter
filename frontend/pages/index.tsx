@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
-import { Flat } from "../components/Flat.jsx"
+import { Flat } from "../components/Flat/Flat.jsx"
+import { FiltersPopup } from "../components/FiltersPopup/FiltersPopup.jsx"
 
 const HomePage: NextPage = () => (
   <div className="mainPageContainer">
@@ -16,6 +17,9 @@ const HomePage: NextPage = () => (
     <section className="flatsList">
       <Flat />
       <Flat />
+    </section>
+    <section className="filtersPopup">
+      <FiltersPopup />
     </section>
   </div>
 );

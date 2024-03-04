@@ -104,7 +104,7 @@ legend {
   width: 100%;
 }
 .mainPageContainer .layoutAndFilterContainer h1 {
-  font-family: "Extatica";
+  font-family: "Extatica", sans-serif;
   font-weight: 500;
   font-size: 25px;
   line-height: 32.5px;
@@ -118,7 +118,7 @@ legend {
   flex-direction: row;
   flex-wrap: nowrap;
   background: #2495FE;
-  font-family: "Extatica";
+  font-family: "Extatica", sans-serif;
   font-size: 14px;
   line-height: 18.2px;
   width: 100%;

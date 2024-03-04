@@ -42,6 +42,13 @@
     font-style: normal;
     font-weight: 700;
   }
+  @font-face {
+    font-display: swap;
+    font-family: "Open Sans";
+    src: url("./fonts/OpenSans-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+  }
 
   html {
     @apply font-ex font-medium bg-white text-black

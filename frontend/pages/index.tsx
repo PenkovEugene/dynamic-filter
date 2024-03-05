@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NextPage } from 'next';
-import { Flat } from "../components/Flat/Flat.jsx"
-import { FiltersPopup } from "../components/FiltersPopup/FiltersPopup.jsx"
+import { Header } from "../components/Header/Header.jsx";
+import fetch from "isomorphic-unfetch";
+import { FilterData, FlatData } from "../pages/api/hello";
 
+// const HomePage: NextPage <{ filterData: FilterData[]; flatData: FlatData }> = ({ filterData, flatData }) => {
 const HomePage: NextPage = () => {
-  const [isFiltersPopupOpen, setIsFiltersPopupOpen] = useState(false);
-
-  const toggleFiltersPopup = () => {
-    setIsFiltersPopupOpen(!isFiltersPopupOpen);
-  };
+  
   
   return (
-    <div className="mainPageContainer">
-      <div className="layoutAndFilterContainer">
+    <>
+      <Header />
+      
+    </>
+  );
+};
+
+// HomePage.getInitialProps = async () => {
+//   const res = await fetch("http://localhost:3000/api/hello");
+//   const { filterData, flatData } = await res.json();
+
+//   return { filterData, flatData };
+// };
+
+export default HomePage;
+
+
+
+
+{/* <div className="layoutAndFilterContainer">
         <h1>Планировки</h1>
         <div className="filterBtnWrapper">
           <button className='filterBtn' onClick={toggleFiltersPopup}>
@@ -22,14 +38,8 @@ const HomePage: NextPage = () => {
         </div>
       </div>
       <section className="flatsList">
-        <Flat />
-        <Flat />
+        { flatData.map((flat: FlatData) => <Flat key={flat.id} flatData={flat} />) }
       </section>
       <section className={`filtersPopup ${isFiltersPopupOpen ? 'open' : ''}`}>
-        <FiltersPopup toggleFiltersPopup={toggleFiltersPopup}/>
-      </section>
-    </div>
-  );
-};
-
-export default HomePage;
+        <FiltersPopup filterData={filterData} toggleFiltersPopup={toggleFiltersPopup}/>
+      </section> */}

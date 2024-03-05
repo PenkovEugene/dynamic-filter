@@ -1,0 +1,126 @@
+.mainFiltersContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 32px 70px 0 70px;
+ 
+  h1 {
+    font-family: "Extatica", sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 78px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .filtersContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    // justify-content: space-between;
+    h2 {
+      display: flex;
+      flex-wrap: nowrap;
+      font-family: "Evolventa", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23.4px;
+      color: #040306;
+      opacity: 40%;
+      margin-bottom: 12px;
+    }
+
+    .progectListsContainer {
+      width: 430px;
+      min-width: 200px;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: 100%;
+      height: 55px;
+      border: 1px solid #1E1F22;
+      border-radius: 10px;
+      opacity: 75%;
+      padding: 0 20px;
+      justify-content: space-between;
+      margin-bottom: 25px;
+
+      .progectListsContainer, .flatRoomBtnsContainer, .priceFilterContainer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      
+
+      p {
+        opacity: 100%;
+        color: #040306;
+        font-family: "Evolventa", sans-serif;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 24.7px;
+      }
+    }
+
+    .roomsBtnsContainer {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      height: 55px;
+
+      [class^="roomsBtns"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    .priceFilterContainer {
+      width: 430px;
+      min-width: 370px;
+    }
+
+    .flatRoomBtnsContainer {
+      width: 430px;
+      min-width: 370px;
+    }
+
+    .squereFilterContainer {
+      width: 430px;
+      min-width: 250px;
+    }
+
+    .squereFilter {
+      display: flex;
+      margin-bottom: 48px;
+    }
+
+
+    .line {
+      width: 20px;
+      border: 1px solid #040306;
+      opacity: 30%;
+      padding: auto;
+    }
+  }
+}
+
+// @media (max-width: 920px) {
+//   .progectListsContainer, .flatRoomBtnsContainer, .priceFilterContainer {
+//     left: 0;
+//     transform: scale(0.8);
+//   }
+// }
+
+@media (max-width: 1380px) {
+  .filtersContainer {
+    flex-wrap: wrap;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function FiltersPopup ({toggleFiltersPopup}) {
+export const FiltersPopup = ({ filterData, toggleFiltersPopup }) => {
   return (
     <div className="filtersPopupContainer">
       <div className="exitBtnContainer">

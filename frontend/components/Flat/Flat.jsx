@@ -1,4 +1,6 @@
-export function Flat(props) {
+
+
+export const Flat = ({ flatData }) => {
   console.log(props)
 
   return (

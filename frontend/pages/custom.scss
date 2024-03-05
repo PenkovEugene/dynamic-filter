@@ -88,7 +88,9 @@ legend {
 	display: block;
 }
 
-
+.FilterRendererContainer{
+  background: #FFFFFF;
+}
 
 .mainPageContainer {
   display: flex;
@@ -99,63 +101,65 @@ legend {
   background-color: #FFFFFF;
   width: 100%;
   padding: 0 20px;
+}
 
-  .layoutAndFilterContainer {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 40px;
-    width: 100%;
-    
-    h1 {
+.layoutAndFilterContainer {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 40px;
+  width: 100%;
+  padding: 20px 20px 20px;
+  
+  h1 {
+    font-family: "Extatica", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 32.5px;
+    text-transform: uppercase;
+  }
+
+  .filterBtnWrapper {
+    .filterBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      background: #2495FE;
       font-family: "Extatica", sans-serif;
-      font-weight: 500;
-      font-size: 25px;
-      line-height: 32.5px;
-      text-transform: uppercase;
-    }
-
-    .filterBtnWrapper {
-      .filterBtn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        background: #2495FE;
-        font-family: "Extatica", sans-serif;
-        font-size: 14px;
-        line-height: 18.2px;
-        width: 100%;
-        height: 42px;
-        border-radius: 10px;
-        gap: 6px;
-        margin-bottom: 16px;
-      }
+      font-size: 14px;
+      line-height: 18.2px;
+      width: 100%;
+      height: 42px;
+      border-radius: 10px;
+      gap: 6px;
+      margin-bottom: 16px;
     }
   }
+}
 
-  .flatsList {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.flatsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-  .filtersPopup {
-    background: inherit;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    right: 0;
-    transition: top 0.5s ease-in-out;
-    z-index: 1;
-    padding: 20px 20px 20px;
+.filtersPopup {
+  background: inherit;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  transition: top 0.5s ease-in-out;
+  z-index: 1;
+  padding: 20px 20px 20px;
 
-    &.open {
-      top: 0;
-    }
+  &.open {
+    top: 0;
   }
 }
 

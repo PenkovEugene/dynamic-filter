@@ -9,10 +9,12 @@ const HomePage: NextPage = () => {
   
   
   return (
-    <>
+    <div className="appContainer">
       <Header />
-      
-    </>
+      <div className="flatListContainer">
+        
+      </div>
+    </div>
   );
 };
 

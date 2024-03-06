@@ -46,10 +46,21 @@ export const MainFilters = () => {
             <p>до 98,4</p>
           </button>
         </div>
-        {/* <button className="flatResultsBtn">
-          Смотреть квартиры
-        </button> */}
       </div>
+      <div className="resultsBtnContainer">
+        <div className="resultInfo">
+          <p>Найдено 245 квартир</p>
+        </div>
+        <div className="resultClearBtn">
+          <button>
+            <div className="clearBtnContainer">
+              <img src="reset_img.svg" alt="reset image" />
+              <p>Очистить всё</p>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div className="mainFilterLine"></div>
     </div>
   )
 }

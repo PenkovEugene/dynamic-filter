@@ -85,6 +85,10 @@ legend {
   display: block;
 }
 
+.FilterRendererContainer {
+  background: #FFFFFF;
+}
+
 .mainPageContainer {
   display: flex;
   flex-direction: column;
@@ -95,22 +99,25 @@ legend {
   width: 100%;
   padding: 0 20px;
 }
-.mainPageContainer .layoutAndFilterContainer {
+
+.layoutAndFilterContainer {
+  background: #FFFFFF;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 40px;
   width: 100%;
+  padding: 20px 20px 20px;
 }
-.mainPageContainer .layoutAndFilterContainer h1 {
+.layoutAndFilterContainer h1 {
   font-family: "Extatica", sans-serif;
   font-weight: 500;
   font-size: 25px;
   line-height: 32.5px;
   text-transform: uppercase;
 }
-.mainPageContainer .layoutAndFilterContainer .filterBtnWrapper .filterBtn {
+.layoutAndFilterContainer .filterBtnWrapper .filterBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,12 +134,14 @@ legend {
   gap: 6px;
   margin-bottom: 16px;
 }
-.mainPageContainer .flatsList {
+
+.flatsList {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.mainPageContainer .filtersPopup {
+
+.filtersPopup {
   background: inherit;
   position: fixed;
   top: -100%;
@@ -142,6 +151,6 @@ legend {
   z-index: 1;
   padding: 20px 20px 20px;
 }
-.mainPageContainer .filtersPopup.open {
+.filtersPopup.open {
   top: 0;
 }/*# sourceMappingURL=custom.css.map */

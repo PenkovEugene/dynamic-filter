@@ -1,0 +1,146 @@
+.mainFiltersContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 64px;
+  padding: 32px 70px 0 70px;
+}
+.mainFiltersContainer h1 {
+  font-family: "Extatica", sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 78px;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.mainFiltersContainer .filtersContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+.mainFiltersContainer .filtersContainer h2 {
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: #040306;
+  opacity: 40%;
+  margin-bottom: 12px;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer {
+  width: 430px;
+  min-width: 200px;
+}
+.mainFiltersContainer .filtersContainer button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.mainFiltersContainer .filtersContainer button .progectListsContainer, .mainFiltersContainer .filtersContainer button .flatRoomBtnsContainer, .mainFiltersContainer .filtersContainer button .priceFilterContainer {
+  display: flex;
+  flex-direction: column;
+}
+.mainFiltersContainer .filtersContainer button p {
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24.7px;
+}
+.mainFiltersContainer .filtersContainer .roomsBtnsContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  height: 55px;
+}
+.mainFiltersContainer .filtersContainer .roomsBtnsContainer [class^=roomsBtns] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 55px;
+  height: 55px;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer {
+  width: 430px;
+  min-width: 370px;
+}
+.mainFiltersContainer .filtersContainer .flatRoomBtnsContainer {
+  width: 430px;
+  min-width: 370px;
+}
+.mainFiltersContainer .filtersContainer .squereFilterContainer {
+  width: 430px;
+  min-width: 250px;
+}
+.mainFiltersContainer .filtersContainer .squereFilter {
+  display: flex;
+  margin-bottom: 48px;
+}
+.mainFiltersContainer .filtersContainer .line {
+  width: 20px;
+  border: 1px solid #040306;
+  opacity: 30%;
+  padding: auto;
+}
+.mainFiltersContainer .mainFilterLine {
+  border: 1px solid #040306;
+  opacity: 20%;
+  margin-top: 64px;
+  margin-bottom: 48px;
+}
+
+.resultsBtnContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.resultsBtnContainer .resultInfo {
+  grid-column: 2;
+  justify-self: center;
+}
+.resultsBtnContainer .resultInfo p {
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+.resultsBtnContainer .resultClearBtn {
+  grid-column: 3;
+  justify-self: end;
+}
+.resultsBtnContainer .clearBtnContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.resultsBtnContainer .clearBtnContainer img {
+  width: 12px;
+  height: 12px;
+}
+.resultsBtnContainer .clearBtnContainer p {
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  margin-left: 12px;
+}
+
+@media (max-width: 1380px) {
+  .filtersContainer {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=mainFilters.css.map */

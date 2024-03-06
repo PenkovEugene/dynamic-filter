@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
+  margin-bottom: 64px;
   padding: 32px 70px 0 70px;
  
   h1 {
@@ -110,14 +111,56 @@
       padding: auto;
     }
   }
+  .mainFilterLine {
+    border: 1px solid #040306;
+    opacity: 20%;
+    margin-top: 64px;
+    margin-bottom: 48px;
+  }
 }
 
-// @media (max-width: 920px) {
-//   .progectListsContainer, .flatRoomBtnsContainer, .priceFilterContainer {
-//     left: 0;
-//     transform: scale(0.8);
-//   }
-// }
+.resultsBtnContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .resultInfo {
+    grid-column: 2;
+    justify-self: center;
+    p {
+      font-family: "Evolventa", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23.4px;
+    }
+  }
+
+  .resultClearBtn {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .clearBtnContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+
+    p {
+      font-family: "Evolventa", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23.4px;
+      margin-left: 12px;
+    }
+  }
+}
 
 @media (max-width: 1380px) {
   .filtersContainer {

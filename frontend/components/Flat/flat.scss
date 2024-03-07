@@ -1,11 +1,14 @@
 .flatContainer {
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 100%;
+  min-width: 300px;
   height: 371px;
   border: 0.58px solid #040306;
   border-radius: 5.78px;
+  background: #FFFFFF;
 
   .flatPriceInfoContainer {
     display: flex;
@@ -61,6 +64,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 30.8px;
+    // height: 200px;
+    width: 200px;
   }
 
   .buildingInfo {

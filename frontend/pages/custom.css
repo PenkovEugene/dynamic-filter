@@ -137,20 +137,58 @@ legend {
 
 .flatsList {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.flatsList a {
+  margin-bottom: 28px;
 }
 
 .filtersPopup {
   background: inherit;
   position: fixed;
+  opacity: 0;
   top: -100%;
   left: 0;
   right: 0;
   transition: top 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 0;
   padding: 20px 20px 20px;
 }
 .filtersPopup.open {
   top: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+@media (max-width: 1380px) {
+  .filtersContainer {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1050px) {
+  .appContainer .flatListContainer {
+    padding: 0 20px;
+  }
+  .appContainer .flatListContainer .flatsList {
+    display: flex;
+    gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .appContainer .flatListContainer {
+    display: block;
+    padding: 0 20px;
+  }
+  .appContainer .flatListContainer .flatsList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .appContainer .flatListContainer .flatsList a {
+    margin-bottom: 0;
+  }
 }/*# sourceMappingURL=custom.css.map */

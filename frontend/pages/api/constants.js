@@ -1,0 +1,1 @@
+export const BASE_URL = "https://dynamic-filter.aerokod.ru/api/v1";

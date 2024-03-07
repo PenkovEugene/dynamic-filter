@@ -1,4 +1,5 @@
 import '@/styles/globals.scss';
+import "../components/App/app.scss";
 import './custom.scss';
 import "../components/Flat/flat.scss"
 import "../components/FiltersPopup/filtersPopup.scss"

@@ -99,7 +99,6 @@
   border: 1px solid #040306;
   opacity: 20%;
   margin-top: 64px;
-  margin-bottom: 48px;
 }
 
 .resultsBtnContainer {
@@ -137,10 +136,4 @@
   font-size: 18px;
   line-height: 23.4px;
   margin-left: 12px;
-}
-
-@media (max-width: 1380px) {
-  .filtersContainer {
-    flex-wrap: wrap;
-  }
 }/*# sourceMappingURL=mainFilters.css.map */

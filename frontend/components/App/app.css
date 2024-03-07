@@ -1,0 +1,8 @@
+.appContainer {
+  background: #FFFFFF;
+}
+.appContainer .flatListContainer {
+  display: flex;
+  padding: 0 70px;
+  align-items: center;
+}/*# sourceMappingURL=app.css.map */

@@ -115,7 +115,6 @@
     border: 1px solid #040306;
     opacity: 20%;
     margin-top: 64px;
-    margin-bottom: 48px;
   }
 }
 
@@ -162,8 +161,3 @@
   }
 }
 
-@media (max-width: 1380px) {
-  .filtersContainer {
-    flex-wrap: wrap;
-  }
-}

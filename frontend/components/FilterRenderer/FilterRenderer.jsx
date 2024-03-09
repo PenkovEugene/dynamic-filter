@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { FilterForMobile } from "../FilterForMobile/FIlterForMobile"
 import { MainFilters } from "../MainFilters/MainFilters"
 
@@ -20,9 +21,11 @@ export const FilterRenderer = () => {
     };
   }, []);
 
+  const { list } = useSelector(({ filters }) => filters);
+
   return (
     <div className="FilterRendererContainer">
-      {isSmallScreen ? <FilterForMobile /> : <MainFilters />}
+      {isSmallScreen ? <FilterForMobile /> : <MainFilters filters={list}/>}
     </div>
   );
 };

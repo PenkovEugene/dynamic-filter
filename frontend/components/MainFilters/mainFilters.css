@@ -29,23 +29,80 @@
   opacity: 40%;
   margin-bottom: 12px;
 }
+.mainFiltersContainer .filtersContainer .projectsDropdown {
+  position: relative;
+}
 .mainFiltersContainer .filtersContainer .progectListsContainer {
   width: 430px;
   min-width: 200px;
 }
+.mainFiltersContainer .filtersContainer .progectListsContainer button {
+  padding-right: 35px;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer button:focus {
+  outline: none;
+  background: #2495FE;
+  color: #FFFFFF;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsList_list {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  display: none;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFFFFF;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsList_list.open {
+  display: block;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item {
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  border-radius: 10px;
+  padding: 20px;
+  opacity: 75%;
+  cursor: pointer;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item:hover {
+  background: #2495FE;
+  color: #FFFFFF;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item:last-child {
+  border-bottom: none;
+}
+.mainFiltersContainer .filtersContainer .progectListsContainer .projectsDropdownInput-hidden {
+  display: block;
+  border: 1px solid black;
+}
 .mainFiltersContainer .filtersContainer button {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+  position: relative;
+  display: block;
   width: 100%;
   height: 55px;
   border: 1px solid #1E1F22;
   border-radius: 10px;
   opacity: 75%;
+  text-align: left;
   padding: 0 20px;
-  justify-content: space-between;
   margin-bottom: 25px;
+  cursor: pointer;
+}
+.mainFiltersContainer .filtersContainer button img {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 .mainFiltersContainer .filtersContainer button .progectListsContainer, .mainFiltersContainer .filtersContainer button .flatRoomBtnsContainer, .mainFiltersContainer .filtersContainer button .priceFilterContainer {
   display: flex;
@@ -77,6 +134,12 @@
   width: 430px;
   min-width: 370px;
 }
+.mainFiltersContainer .filtersContainer .priceFilterContainer .pricefilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .mainFiltersContainer .filtersContainer .flatRoomBtnsContainer {
   width: 430px;
   min-width: 370px;
@@ -85,8 +148,11 @@
   width: 430px;
   min-width: 250px;
 }
-.mainFiltersContainer .filtersContainer .squereFilter {
+.mainFiltersContainer .filtersContainer .squereFilterContainer .squereFilter {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 48px;
 }
 .mainFiltersContainer .filtersContainer .line {

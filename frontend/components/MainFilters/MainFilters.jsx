@@ -1,14 +1,41 @@
-export const MainFilters = () => {
+import React, { useState } from "react";
+
+export const MainFilters = ( {filters} ) => {
+  const [isProjectSelectorOpen, setIsProjectSelectorOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState("Все");
+  
+  const toggleProjectSelector = () => {
+    setIsProjectSelectorOpen(!isProjectSelectorOpen);
+  };
+
+  const toggleSelectedProject = (project) => {
+    setSelectedProject(project.title);
+    setIsProjectSelectorOpen(false);
+  }
+
   return (
     <div className="mainFiltersContainer">
       <h1>Планировка</h1>
       <div className="filtersContainer">
         <div className="progectListsContainer">
-        <h2>Проект</h2>
-        <button className="progectsList">
-          <p>Все</p>
-          <p><img src="vector.svg" alt="vector" /></p>
-        </button>
+          <h2>Проект</h2>
+          <div className="projectsDropdown">
+            <button className="progectsListBtn" onClick={toggleProjectSelector}>
+              <p>{selectedProject}</p>
+              <img src="vector.svg" alt="vector" />
+            </button>
+            <ul className={`projectsList_list ${isProjectSelectorOpen ? 'open' : ''}`}>
+              <li className="projectsList_list-item" onClick={() => {setSelectedProject("Все"); setIsProjectSelectorOpen()}}>Все</li>
+              {filters.projects.map((project) => (
+                !project.disabled && (
+                  <li className="projectsList_list-item" key={project.id} onClick={() => toggleSelectedProject(project)}>
+                  {project.title}
+                  </li>
+                )
+              ))}
+            </ul>
+            {/* <input type="text" name="select-project" value="" className="projectsDropdownInput-hidden"/> */}
+          </div>
         </div>
         <div className="flatRoomBtnsContainer">
           <h2>Укажите количество комнат</h2>

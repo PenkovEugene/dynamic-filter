@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export const Flat = ({ flats = [], amount }) => {
+export const Flat = ({ flats = [] }) => {
   const formatPrice = (price) => {
     price = price.toString();
     const parts = price.split('.');
@@ -56,7 +56,6 @@ export const Flat = ({ flats = [], amount }) => {
           </div>
         </Link>
       ))}
-      
     </section>
   )
 }

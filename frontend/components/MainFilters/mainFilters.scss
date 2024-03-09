@@ -31,24 +31,102 @@
       margin-bottom: 12px;
     }
 
+    .projectsDropdown {
+      position: relative;
+    }
+
     .progectListsContainer {
+      // position: relative;
       width: 430px;
       min-width: 200px;
+
+      button {
+        padding-right: 35px;
+      }
+
+      button:focus {
+        outline: none;
+        background: #2495FE;
+        color: #FFFFFF;
+      }
+
+      .projectsList_list {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        display: none;
+        border: 1px solid #1E1F22;
+        border-radius: 10px;
+        // opacity: 75%;
+        overflow: hidden;
+        background: #FFFFFF;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 25px;
+        cursor: pointer;
+        z-index: 1;
+
+        &.open {
+          display: block;
+        }
+
+        .projectsList_list-item {
+          font-family: "Evolventa", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 23.4px;
+          border-radius: 10px;
+          padding: 20px;
+          opacity: 75%;
+          cursor: pointer;
+
+
+          &:hover {
+            background: #2495FE;
+            color: #FFFFFF;
+
+          }
+
+
+          &:last-child {
+            border-bottom: none
+
+          }
+        }
+      }
+      .projectsDropdownInput-hidden {
+        display: block;
+        border: 1px solid black;
+      }
     }
 
     button {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
+      position: relative;
+      display: block;
+      // flex-direction: row;
+      // flex-wrap: nowrap;
+      // align-items: center;
       width: 100%;
       height: 55px;
       border: 1px solid #1E1F22;
       border-radius: 10px;
       opacity: 75%;
+      text-align: left;
       padding: 0 20px;
-      justify-content: space-between;
+      // justify-content: space-between;
       margin-bottom: 25px;
+      cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    
 
       .progectListsContainer, .flatRoomBtnsContainer, .priceFilterContainer {
         display: flex;
@@ -86,6 +164,13 @@
     .priceFilterContainer {
       width: 430px;
       min-width: 370px;
+
+      .pricefilter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     .flatRoomBtnsContainer {
@@ -96,12 +181,17 @@
     .squereFilterContainer {
       width: 430px;
       min-width: 250px;
+
+      .squereFilter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+      }
     }
 
-    .squereFilter {
-      display: flex;
-      margin-bottom: 48px;
-    }
+    
 
 
     .line {

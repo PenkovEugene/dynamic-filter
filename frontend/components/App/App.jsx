@@ -15,12 +15,13 @@ const App = () => {
   }, [dispatch])
 
   const { list } = useSelector(({ flats }) => flats);
+  // const { list } = useSelector(({ filters }) => filters);
 
   return (
     <div className="appContainer">
       <Header />
       <div className="flatListContainer">
-        <Flat flats={list} amount={3} />
+        <Flat flats={list} />
       </div>
     </div>
   )

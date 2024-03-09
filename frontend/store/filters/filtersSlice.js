@@ -19,7 +19,12 @@ export const getFilters = createAsyncThunk(
 const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
-    list: [],
+    list: {
+      projects: [],
+      rooms: [],
+      price: [],
+      square: []
+    },
     // filtered: [],
     isLoading: false,
   },
@@ -29,7 +34,7 @@ const filtersSlice = createSlice({
     });
 
     builder.addCase(getFilters.fulfilled, (state, { payload }) => {
-      state.list = payload;
+      state.list = payload.data;
       state.isLoading = false;
     });
 

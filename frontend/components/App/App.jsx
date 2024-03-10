@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Header } from "../Header/Header.jsx";
 import { Flat } from "../Flat/Flat.jsx";
 
-const App = () => {
+const App = ( {selectedProject} ) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const App = () => {
     <div className="appContainer">
       <Header />
       <div className="flatListContainer">
-        <Flat flats={list} />
+        <Flat flats={list} selectedProject={selectedProject}/>
       </div>
     </div>
   )

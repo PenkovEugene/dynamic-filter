@@ -1,20 +1,23 @@
 import Link from "next/link";
 import React from "react";
+import { formatPrice } from "@/utils/formatPrice";
 
-export const Flat = ({ flats = [] }) => {
-  const formatPrice = (price) => {
-    price = price.toString();
-    const parts = price.split('.');
+// export const formatPrice = (price) => {
+//   price = price.toString();
+//   const parts = price.split('.');
 
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+//   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
-    return parts.join('.');
-  }
+//   return parts.join('.');
+// }
 
-  // const list = flats.filter((_, i) => i < amount);
+export const Flat = ({ flats = [], selectedProject = "Все" }) => {
+
+  const filteredFlats = selectedProject === "Все" ? flats : flats.filter(flat => flat.project_title === selectedProject);
+
   return (
     <section className="flatsList">
-      {flats.map(({ id, project_title, rooms, studio, price, old_price, square, release_dates, floor, image }) => (
+      {filteredFlats.map(({ id, project_title, rooms, studio, price, old_price, square, release_dates, floor, image }) => (
         <Link href={`/flats/${id}`} key={id}>
           <div className="flatContainer">
             <div className="flatPriceInfoContainer">

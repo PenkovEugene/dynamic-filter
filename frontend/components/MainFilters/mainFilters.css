@@ -32,6 +32,12 @@
 .mainFiltersContainer .filtersContainer .projectsDropdown {
   position: relative;
 }
+.mainFiltersContainer .filtersContainer .projectsDropdown button img {
+  transition: transform 0.3s ease-in-out;
+}
+.mainFiltersContainer .filtersContainer .projectsDropdown.open button img {
+  transform: rotate(-180deg) translateY(2px);
+}
 .mainFiltersContainer .filtersContainer .progectListsContainer {
   width: 430px;
   min-width: 200px;
@@ -134,32 +140,122 @@
   width: 430px;
   min-width: 370px;
 }
-.mainFiltersContainer .filtersContainer .priceFilterContainer .pricefilter {
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input, .mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input {
+  width: 100%;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24.7px;
+  text-align: center;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input:focus::-moz-placeholder, .mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input:focus::placeholder,
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input:focus::placeholder {
+  opacity: 0;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter input[type=number]::-webkit-inner-spin-button,
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter [class$=priceContainer] {
+  display: flex;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24.7px;
+}
+.mainFiltersContainer .filtersContainer .priceFilterContainer .priceFilter .line {
+  width: 20px;
+  border: 1px solid #040306;
+  opacity: 30%;
+  text-align: center;
+  margin: 0 15px;
 }
 .mainFiltersContainer .filtersContainer .flatRoomBtnsContainer {
   width: 430px;
   min-width: 370px;
 }
-.mainFiltersContainer .filtersContainer .squereFilterContainer {
+.mainFiltersContainer .filtersContainer .flatRoomBtnsContainer button.active {
+  background-color: #2495FE;
+}
+.mainFiltersContainer .filtersContainer .flatRoomBtnsContainer button.active p {
+  color: #FFFFFF;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer {
   width: 430px;
   min-width: 250px;
 }
-.mainFiltersContainer .filtersContainer .squereFilterContainer .squereFilter {
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 48px;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  margin-bottom: 25px;
 }
-.mainFiltersContainer .filtersContainer .line {
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input, .mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input {
+  width: 100%;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24.7px;
+  text-align: center;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input:focus::-moz-placeholder, .mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input:focus::placeholder,
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input:focus::placeholder {
+  opacity: 0;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter input[type=number]::-webkit-inner-spin-button,
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter [class$=squareContainer] {
+  display: flex;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24.7px;
+}
+.mainFiltersContainer .filtersContainer .squareFilterContainer .squareFilter .line {
   width: 20px;
   border: 1px solid #040306;
   opacity: 30%;
-  padding: auto;
+  text-align: center;
+  margin: 0 15px;
 }
 .mainFiltersContainer .mainFilterLine {
   border: 1px solid #040306;

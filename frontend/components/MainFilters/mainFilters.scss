@@ -18,7 +18,7 @@
     display: flex;
     gap: 20px;
     flex-direction: row;
-    // justify-content: space-between;
+
     h2 {
       display: flex;
       flex-wrap: nowrap;
@@ -33,10 +33,17 @@
 
     .projectsDropdown {
       position: relative;
+
+      button img {
+        transition: transform .3s ease-in-out;
+      }
+      &.open button img {
+        transform: rotate(-180deg) translateY(2px);
+      }
     }
+    
 
     .progectListsContainer {
-      // position: relative;
       width: 430px;
       min-width: 200px;
 
@@ -57,7 +64,6 @@
         display: none;
         border: 1px solid #1E1F22;
         border-radius: 10px;
-        // opacity: 75%;
         overflow: hidden;
         background: #FFFFFF;
         width: 100%;
@@ -69,6 +75,7 @@
 
         &.open {
           display: block;
+          
         }
 
         .projectsList_list-item {
@@ -81,17 +88,13 @@
           opacity: 75%;
           cursor: pointer;
 
-
           &:hover {
             background: #2495FE;
             color: #FFFFFF;
-
           }
-
 
           &:last-child {
             border-bottom: none
-
           }
         }
       }
@@ -104,9 +107,6 @@
     button {
       position: relative;
       display: block;
-      // flex-direction: row;
-      // flex-wrap: nowrap;
-      // align-items: center;
       width: 100%;
       height: 55px;
       border: 1px solid #1E1F22;
@@ -114,7 +114,6 @@
       opacity: 75%;
       text-align: left;
       padding: 0 20px;
-      // justify-content: space-between;
       margin-bottom: 25px;
       cursor: pointer;
 
@@ -126,14 +125,10 @@
       pointer-events: none;
     }
 
-    
-
       .progectListsContainer, .flatRoomBtnsContainer, .priceFilterContainer {
         display: flex;
         flex-direction: column;
       }
-
-      
 
       p {
         opacity: 100%;
@@ -165,42 +160,139 @@
       width: 430px;
       min-width: 370px;
 
-      .pricefilter {
+      .priceFilter {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        height: 55px;
+        border: 1px solid #1E1F22;
+        border-radius: 10px;
+        opacity: 75%;
+        padding: 0 20px;
+        margin-bottom: 25px;
+        
+        .min_priceWrapper, .max_priceWrapper {
+          input {
+            width: 100%;
+            opacity: 100%;
+            color: #040306;
+            font-family: "Evolventa", sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 24.7px;
+            text-align: center;
+          }
+        }
+
+        .min_priceWrapper input:focus::placeholder,
+        .max_priceWrapper input:focus::placeholder {
+          opacity: 0;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          appearance: none;
+        }
+
+        [class$="priceContainer"] {
+          display: flex;
+          opacity: 100%;
+          color: #040306;
+          font-family: "Evolventa", sans-serif;
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 24.7px;
+        }
+
+        .line {
+          width: 20px;
+          border: 1px solid #040306;
+          opacity: 30%;
+          text-align: center;
+          margin: 0 15px;
+        }
       }
     }
 
     .flatRoomBtnsContainer {
       width: 430px;
       min-width: 370px;
+
+      button.active {
+        background-color: #2495FE;
+        
+        p {
+          color: #FFFFFF;
+        }
+      }
     }
 
-    .squereFilterContainer {
+    .squareFilterContainer {
       width: 430px;
       min-width: 250px;
 
-      .squereFilter {
+      .squareFilter {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 48px;
+        width: 100%;
+        height: 55px;
+        border: 1px solid #1E1F22;
+        border-radius: 10px;
+        opacity: 75%;
+        padding: 0 20px;
+        margin-bottom: 25px;
+        
+        .min_squareWrapper, .max_squareWrapper {
+          input {
+            width: 100%;
+            opacity: 100%;
+            color: #040306;
+            font-family: "Evolventa", sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 24.7px;
+            text-align: center;
+          }
+        }
+
+        .min_squareWrapper input:focus::placeholder,
+        .max_squareWrapper input:focus::placeholder {
+          opacity: 0;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          appearance: none;
+        }
+
+        [class$="squareContainer"] {
+          display: flex;
+          opacity: 100%;
+          color: #040306;
+          font-family: "Evolventa", sans-serif;
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 24.7px;
+        }
+
+        .line {
+          width: 20px;
+          border: 1px solid #040306;
+          opacity: 30%;
+          text-align: center;
+          margin: 0 15px;
+        }
       }
     }
-
-    
-
-
-    .line {
-      width: 20px;
-      border: 1px solid #040306;
-      opacity: 30%;
-      padding: auto;
-    }
   }
+  
   .mainFilterLine {
     border: 1px solid #040306;
     opacity: 20%;

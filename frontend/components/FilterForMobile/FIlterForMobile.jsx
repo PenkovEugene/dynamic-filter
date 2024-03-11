@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiltersPopup } from "../FiltersPopup/FiltersPopup"
 
-export const FilterForMobile = () => {
+export const FilterForMobile = ({filters}) => {
   const [isFiltersPopupOpen, setIsFiltersPopupOpen] = useState(false);
   
   const toggleFiltersPopup = () => {
@@ -18,7 +18,7 @@ export const FilterForMobile = () => {
         </button>
       </div>
       <section className={`filtersPopup ${isFiltersPopupOpen ? 'open' : ''}`}>
-        <FiltersPopup toggleFiltersPopup={toggleFiltersPopup}/>
+        <FiltersPopup filters={filters} toggleFiltersPopup={toggleFiltersPopup}/>
       </section>
     </div>
   )

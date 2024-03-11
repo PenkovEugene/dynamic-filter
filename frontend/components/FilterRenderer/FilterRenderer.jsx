@@ -25,7 +25,7 @@ export const FilterRenderer = () => {
 
   return (
     <div className="FilterRendererContainer">
-      {isSmallScreen ? <FilterForMobile /> : <MainFilters filters={list}/>}
+      {isSmallScreen ? <FilterForMobile filters={list} /> : <MainFilters filters={list}/>}
     </div>
   );
 };

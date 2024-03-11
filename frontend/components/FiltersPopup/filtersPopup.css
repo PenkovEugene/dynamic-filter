@@ -27,6 +27,8 @@
   margin-bottom: 32px;
 }
 .filtersPopupContainer .filtersContainer h2 {
+  display: flex;
+  flex-wrap: nowrap;
   font-family: "Evolventa", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -49,6 +51,91 @@
   justify-content: space-between;
   margin-bottom: 25px;
 }
+.filtersPopupContainer .filtersContainer .projectsDropdown {
+  position: relative;
+}
+.filtersPopupContainer .filtersContainer .projectsDropdown button img {
+  transition: transform 0.3s ease-in-out;
+}
+.filtersPopupContainer .filtersContainer .projectsDropdown.open button img {
+  transform: rotate(-180deg) translateY(2px);
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer {
+  width: 100%;
+  min-width: 200px;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer button {
+  padding-right: 35px;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer button:focus {
+  outline: none;
+  background: #2495FE;
+  color: #FFFFFF;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsList_list {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  display: none;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFFFFF;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsList_list.open {
+  display: block;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item {
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23.4px;
+  border-radius: 10px;
+  padding: 20px;
+  opacity: 75%;
+  cursor: pointer;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item:hover {
+  background: #2495FE;
+  color: #FFFFFF;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsList_list .projectsList_list-item:last-child {
+  border-bottom: none;
+}
+.filtersPopupContainer .filtersContainer .progectListsContainer .projectsDropdownInput-hidden {
+  display: block;
+  border: 1px solid black;
+}
+.filtersPopupContainer .filtersContainer button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  text-align: left;
+  padding: 0 20px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.filtersPopupContainer .filtersContainer button img {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.filtersPopupContainer .filtersContainer button .progectListsContainer, .filtersPopupContainer .filtersContainer button .flatRoomBtnsContainer, .filtersPopupContainer .filtersContainer button .priceFilterContainer {
+  display: flex;
+  flex-direction: column;
+}
 .filtersPopupContainer .filtersContainer button p {
   opacity: 100%;
   color: #040306;
@@ -69,8 +156,129 @@
   width: 49px;
   height: 49px;
 }
+.filtersPopupContainer .filtersContainer .flatRoomBtnsContainer {
+  width: 100%;
+}
+.filtersPopupContainer .filtersContainer .flatRoomBtnsContainer button.active {
+  background-color: #2495FE;
+}
+.filtersPopupContainer .filtersContainer .flatRoomBtnsContainer button.active p {
+  color: #FFFFFF;
+}
+.filtersPopupContainer .filtersContainer .flatRoomBtnsContainer button.disabled {
+  opacity: 30%;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer {
+  width: 100%;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input, .filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input {
+  width: 100%;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24.7px;
+  text-align: center;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input:focus::-moz-placeholder, .filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .min_priceWrapper input:focus::placeholder,
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .max_priceWrapper input:focus::placeholder {
+  opacity: 0;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter input[type=number]::-webkit-inner-spin-button,
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter [class$=priceContainer] {
+  display: flex;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24.7px;
+}
+.filtersPopupContainer .filtersContainer .priceFilterContainer .priceFilter .line {
+  width: 20px;
+  border: 1px solid #040306;
+  opacity: 30%;
+  text-align: center;
+  margin: 0 15px;
+}
 .filtersPopupContainer .filtersContainer .squereFilter {
   margin-bottom: 48px;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer {
+  width: 100%;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #1E1F22;
+  border-radius: 10px;
+  opacity: 75%;
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input, .filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input {
+  width: 100%;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24.7px;
+  text-align: center;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input:focus::-moz-placeholder, .filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .min_squareWrapper input:focus::placeholder,
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .max_squareWrapper input:focus::placeholder {
+  opacity: 0;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter input[type=number]::-webkit-inner-spin-button,
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter [class$=squareContainer] {
+  display: flex;
+  opacity: 100%;
+  color: #040306;
+  font-family: "Evolventa", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24.7px;
+}
+.filtersPopupContainer .filtersContainer .squareFilterContainer .squareFilter .line {
+  width: 20px;
+  border: 1px solid #040306;
+  opacity: 30%;
+  text-align: center;
+  margin: 0 15px;
 }
 .filtersPopupContainer .filtersContainer .flatResultsBtn {
   display: flex;

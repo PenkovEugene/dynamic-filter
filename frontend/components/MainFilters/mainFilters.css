@@ -201,6 +201,9 @@
 .mainFiltersContainer .filtersContainer .flatRoomBtnsContainer button.active p {
   color: #FFFFFF;
 }
+.mainFiltersContainer .filtersContainer .flatRoomBtnsContainer button.disabled {
+  opacity: 30%;
+}
 .mainFiltersContainer .filtersContainer .squareFilterContainer {
   width: 430px;
   min-width: 250px;

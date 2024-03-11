@@ -228,6 +228,10 @@
           color: #FFFFFF;
         }
       }
+        
+      button.disabled {
+        opacity: 30%;
+      }
     }
 
     .squareFilterContainer {

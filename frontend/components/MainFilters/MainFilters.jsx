@@ -1,20 +1,24 @@
-import React, { useState } from "react";
-import {formatPrice} from "@/utils/formatPrice";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { formatPrice } from "@/utils/formatPrice";
+import { useSelector } from "react-redux";
 
 export const MainFilters = ( {filters} ) => {
   const [isProjectSelectorOpen, setIsProjectSelectorOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState("Все");
-  const [selectedRooms, setSelectedRooms] = useState("Все");
-  const [studioRoomBtnActive, setStudioRoomBtnActive] = useState(false);
-  const [oneRoomBtnActive, setOneRoomBtnActive] = useState(false);
-  const [twoRoomBtnActive, setTwoRoomBtnActive] = useState(false);
-  const [threeRoomBtnActive, setThreeRoomBtnActive] = useState(false);
-  const [fourRoomBtnActive, setFourRoomBtnActive] = useState(false);
+  const [studioRoomBtnActive, setStudioRoomBtnActive] = useState({disabled: true, active: false});
+  const [oneRoomBtnActive, setOneRoomBtnActive] = useState({disabled: true, active: false});
+  const [twoRoomBtnActive, setTwoRoomBtnActive] = useState({disabled: true, active: false});
+  const [threeRoomBtnActive, setThreeRoomBtnActive] = useState({disabled: true, active: false});
+  const [fourRoomBtnActive, setFourRoomBtnActive] = useState({disabled: true, active: false});
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [minSquare, setMinSquare] = useState("");
   const [maxSquare, setMaxSquare] = useState("");
   
+  const router = useRouter();
+  const numberOfFlats = useSelector(state => state.flats.list.length);
+
   const toggleProjectSelector = () => {
     setIsProjectSelectorOpen(!isProjectSelectorOpen);
   };
@@ -22,67 +26,111 @@ export const MainFilters = ( {filters} ) => {
   const toggleRoomBtnActivator = (roomNumber) => {
     switch(roomNumber) {
       case "studio":
-        setStudioRoomBtnActive(!studioRoomBtnActive);
+        // setStudioRoomBtnActive(!studioRoomBtnActive.active);
+        setStudioRoomBtnActive(prevState => ({...prevState, active: !prevState.active}));
         break;
       case "one":
-        setOneRoomBtnActive(!oneRoomBtnActive);
+        setOneRoomBtnActive(prevState => ({...prevState, active: !prevState.active}));
         break;
       case "two":
-        setTwoRoomBtnActive(!twoRoomBtnActive);
+        setTwoRoomBtnActive(prevState => ({...prevState, active: !prevState.active}));
         break;
       case "three":
-        setThreeRoomBtnActive(!threeRoomBtnActive);
+        setThreeRoomBtnActive(prevState => ({...prevState, active: !prevState.active}));
         break;
       case "four":
-        setFourRoomBtnActive(!fourRoomBtnActive);
+        setFourRoomBtnActive(prevState => ({...prevState, active: !prevState.active}));
         break;
     }
   }
+  
+  const updateUrlParams = (params) => {
+    const searchParams = new URLSearchParams(router.query);
+    Object.entries(params).forEach(([key, value]) => {
+      if (value !== '') {
+        searchParams.set(key, value);
+      } else {
+        searchParams.delete(key);
+      }
+    });
+    router.push({
+      pathname: router.pathname,
+      query: searchParams.toString(),
+    });
+  };
 
   const toggleSelectedProject = (project) => {
-    setSelectedProject(project.title);
+    const projectTitle = project.title
+    setSelectedProject(projectTitle);
     setIsProjectSelectorOpen(false);
-    // countFilteredFlats(project.title);
+    updateUrlParams({project: projectTitle !== "Все" ? projectTitle : "Все"});
   }
 
   const handleMinPriceInputChange = (event) => {
     const handleValue = event.target.value;
-    setMinPrice(handleValue)
+    setMinPrice(handleValue);
+    updateUrlParams({ minPrice: handleValue });
   }
+
 
   const handleMaxPriceInputChange = (event) => {
     const handleValue = event.target.value;
-    setMaxPrice(handleValue)
+    setMaxPrice(handleValue);
+    updateUrlParams({ maxPrice: handleValue });
   }
 
   const handleMinSquareInputChange = (event) => {
     const handleValue = event.target.value;
-    setMinSquare(handleValue)
+    setMinSquare(handleValue);
+    updateUrlParams({ minSquare: handleValue });
   }
 
   const handleMaxSquareInputChange = (event) => {
     const handleValue = event.target.value;
-    setMaxSquare(handleValue)
-  }
-
-  const handleRoomSelect = (room) => {
-    setSelectedRooms(room.number);
-    onRoomSelect(room.number);
+    setMaxSquare(handleValue);
+    updateUrlParams({ maxSquare: handleValue });
   }
 
   const clearAllFiltersBtn = () => {
     setSelectedProject("Все");
-    setStudioRoomBtnActive(false);
-    setOneRoomBtnActive(false);
-    setTwoRoomBtnActive(false);
-    setThreeRoomBtnActive(false);
-    setFourRoomBtnActive(false);
+    setStudioRoomBtnActive({disabled: true, active: false});
+    setOneRoomBtnActive({disabled: true, active: false});
+    setTwoRoomBtnActive({disabled: true, active: false});
+    setThreeRoomBtnActive({disabled: true, active: false});
+    setFourRoomBtnActive({disabled: true, active: false});
     setMinPrice("");
     setMaxPrice("");
     setMinSquare("");
     setMaxSquare("");
+    updateUrlParams({
+      project: "Все",
+      minPrice: "",
+      maxPrice: "",
+      minSquare: "",
+      maxSquare: ""
+    })
   }
 
+  useEffect(() => {
+    const { project, minPrice, maxPrice, minSquare, maxSquare } = router.query;
+    if (project) {
+      setSelectedProject(project);
+    }
+    if (minPrice) {
+      setMinPrice(minPrice);
+    }
+    if (maxPrice) {
+      setMaxPrice(maxPrice);
+    }
+    if (minSquare) {
+      setMinSquare(minSquare);
+    }
+    if (maxSquare) {
+      setMaxSquare(maxSquare);
+    }
+  }, [router.query]);
+
+  
   return (
     <div className="mainFiltersContainer">
       <h1>Планировка</h1>
@@ -114,32 +162,32 @@ export const MainFilters = ( {filters} ) => {
           <h2>Укажите количество комнат</h2>
           <div className="roomsBtnsContainer">
             <button 
-              className={`roomsBtns-studio ${studioRoomBtnActive ? 'active' : ''}`}
-              onClick={() => toggleRoomBtnActivator('studio')}
+              className={`roomsBtns-studio ${studioRoomBtnActive.active ? 'active' : ''} ${studioRoomBtnActive.disabled ? 'disabled' : ''}`}
+              onClick={() => {studioRoomBtnActive.disabled === false ? toggleRoomBtnActivator('studio') : ""}}
             >
               <p>Ст</p>
             </button>
             <button 
-              className={`roomsBtns-1rooms ${oneRoomBtnActive ? 'active' : ''}`}
-              onClick={() => toggleRoomBtnActivator('one')}
+              className={`roomsBtns-1rooms ${oneRoomBtnActive.active ? 'active' : ''} ${oneRoomBtnActive.disabled ? 'disabled' : ''}`}
+              onClick={() => {oneRoomBtnActive.disabled === false ? toggleRoomBtnActivator('one') : ""}}
             >
               <p>1К</p>
             </button>
             <button 
-              className={`roomsBtns-2rooms ${twoRoomBtnActive ? 'active' : ''}`}
-              onClick={() => toggleRoomBtnActivator('two')}
+              className={`roomsBtns-2rooms ${twoRoomBtnActive.active ? 'active' : ''} ${twoRoomBtnActive.disabled ? 'disabled' : ''}`}
+              onClick={() => {twoRoomBtnActive.disabled === false ? toggleRoomBtnActivator('two') : ""}}
             >
               <p>2К</p>
             </button>
             <button 
-              className={`roomsBtns-3rooms ${threeRoomBtnActive ? 'active' : ''}`}
-              onClick={() => toggleRoomBtnActivator('three')}
+              className={`roomsBtns-3rooms ${threeRoomBtnActive.active ? 'active' : ''} ${threeRoomBtnActive.disabled ? 'disabled' : ''}`}
+              onClick={() => {threeRoomBtnActive.disabled === false ? toggleRoomBtnActivator('three') : ""}}
             >
               <p>3К</p>
             </button>
             <button 
-              className={`roomsBtns-4rooms ${fourRoomBtnActive ? 'active' : ''}`}
-              onClick={() => toggleRoomBtnActivator('four')}  
+              className={`roomsBtns-4rooms ${fourRoomBtnActive.active ? 'active' : ''} ${fourRoomBtnActive.disabled ? 'disabled' : ''}`}
+              onClick={() => {fourRoomBtnActive.disabled === false ? toggleRoomBtnActivator('four') : ""}}  
             >
               <p>4К</p>
             </button>
@@ -214,7 +262,7 @@ export const MainFilters = ( {filters} ) => {
       </div>
       <div className="resultsBtnContainer">
         <div className="resultInfo">
-          <p>Найдено 6 квартир</p>
+          <p>Найдено {numberOfFlats} квартир</p>
         </div>
         <div className="resultClearBtn">
           <button>
